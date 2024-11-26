@@ -7,7 +7,6 @@ import { Connection, Keypair, PublicKey } from "@solana/web3.js";
 import { PRIVATE_KEY, RPC_URL, TOKEN_MINT } from "./address.js";
 import bs58 from "bs58";
 
-console.log(RPC_URL);
 const connection = new Connection(RPC_URL);
 
 const privateKeyBuffer = bs58.decode(PRIVATE_KEY); // decode private key into uint8
@@ -27,7 +26,7 @@ export const sendLstToken = async (fromAddress, amount) => {
     undefined, // confirmOptions
     TOKEN_2022_PROGRAM_ID // programId
   );
-  console.log(associatedToken, "associated token");
+
   // then mint token to ata
   await mintTo(
     connection,
