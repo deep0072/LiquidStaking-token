@@ -17,6 +17,7 @@ const HELIUS_RESPONSE = {
 };
 const VAULT = "7K5mRe8gHK4fX59HUFph6mD1z8oLroAGZpscoxqT6ZNa";
 app.post("/helius", async (req, res) => {
+  console.log(req.body, "body");
   const incomingTx = HELIUS_RESPONSE.nativeTransfers.find(
     (x) => x.toUserAccount === VAULT
   );
